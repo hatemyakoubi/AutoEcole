@@ -33,5 +33,10 @@ namespace AutoEcole.Forms
             /*label4.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;*/
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
