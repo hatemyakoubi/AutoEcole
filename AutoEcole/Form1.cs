@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace AutoEcole
 {
@@ -100,18 +99,21 @@ namespace AutoEcole
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MySqlConnection cnx = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
+
+            //cnx bd
+           /* MySqlConnection cnx = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
             try
             {
                 cnx.Open();
-                MessageBox.Show("connexion reussite");
+               // MessageBox.Show("connexion reussite");
+
                 cnx.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 cnx.Close();
-                MessageBox.Show("erreur de connexion \n"+ex.Message);
-            }
+                MessageBox.Show("erreur de connexion \n" + ex.Message);
+            }*/
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
