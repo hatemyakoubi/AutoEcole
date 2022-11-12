@@ -48,8 +48,8 @@ namespace AutoEcole
                 {
 
                     con.Open();
-                    string querry = "SELECT * FROM personne WHERE cin ='" +loginCin.Text+ "' AND password ='" +password.Text+ "' ";
-                    var cmd = new MySqlCommand(querry, con);
+                    string querry = "SELECT * FROM personne WHERE cinUser ='" + loginCin.Text + "' AND password ='" + password.Text + "' ";
+                      var cmd = new MySqlCommand(querry, con);
                     cmd.ExecuteReader();
                       Form1 f = new Form1();
                       f.Show();
