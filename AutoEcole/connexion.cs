@@ -15,7 +15,7 @@ namespace AutoEcole
 
         public void ConnexionDB()
         {
-            con = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
+          /*  con = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
             try
             {
                 con.Open();
@@ -24,7 +24,7 @@ namespace AutoEcole
             {
                 con.Close();
                 MessageBox.Show("erreur de connexion \n" + ex.Message);
-            }
+            }*/
         }
     }
 }

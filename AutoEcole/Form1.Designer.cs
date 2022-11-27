@@ -46,12 +46,9 @@ namespace AutoEcole
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
-            this.panelDesktopPane.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -178,7 +175,7 @@ namespace AutoEcole
             this.btnUsers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(221, 60);
             this.btnUsers.TabIndex = 1;
-            this.btnUsers.Text = " Utilisateurs";
+            this.btnUsers.Text = " Candidats";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsers.UseVisualStyleBackColor = true;
@@ -218,7 +215,7 @@ namespace AutoEcole
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(221, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(713, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(876, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -229,7 +226,7 @@ namespace AutoEcole
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(608, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(771, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(30, 30);
             this.btnMaximize.TabIndex = 4;
@@ -244,7 +241,7 @@ namespace AutoEcole
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(644, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(807, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 3;
@@ -259,7 +256,7 @@ namespace AutoEcole
             this.btnCloseT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseT.ForeColor = System.Drawing.Color.White;
-            this.btnCloseT.Location = new System.Drawing.Point(680, 0);
+            this.btnCloseT.Location = new System.Drawing.Point(843, 0);
             this.btnCloseT.Name = "btnCloseT";
             this.btnCloseT.Size = new System.Drawing.Size(30, 30);
             this.btnCloseT.TabIndex = 2;
@@ -286,7 +283,7 @@ namespace AutoEcole
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(254, 33);
+            this.lblTitle.Location = new System.Drawing.Point(336, 33);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(99, 25);
             this.lblTitle.TabIndex = 0;
@@ -294,29 +291,17 @@ namespace AutoEcole
             // 
             // panelDesktopPane
             // 
-            this.panelDesktopPane.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelDesktopPane.Controls.Add(this.pictureBox1);
-            this.panelDesktopPane.Location = new System.Drawing.Point(247, 80);
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.Location = new System.Drawing.Point(221, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(662, 450);
+            this.panelDesktopPane.Size = new System.Drawing.Size(876, 450);
             this.panelDesktopPane.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-26, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(720, 487);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 530);
+            this.ClientSize = new System.Drawing.Size(1097, 530);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -329,9 +314,6 @@ namespace AutoEcole
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panelDesktopPane.ResumeLayout(false);
-            this.panelDesktopPane.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +333,6 @@ namespace AutoEcole
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktopPane;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCloseT;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
