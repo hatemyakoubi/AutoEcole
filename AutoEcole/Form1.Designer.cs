@@ -31,21 +31,22 @@ namespace AutoEcole
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnParametre = new System.Windows.Forms.Button();
-            this.btnPayement = new System.Windows.Forms.Button();
-            this.btnExamen = new System.Windows.Forms.Button();
-            this.btnSeance = new System.Windows.Forms.Button();
-            this.btnVehicule = new System.Windows.Forms.Button();
-            this.btnUsers = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnCloseT = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnVehicule = new System.Windows.Forms.Button();
+            this.btnParametre = new System.Windows.Forms.Button();
+            this.btnPayement = new System.Windows.Forms.Button();
+            this.btnExamen = new System.Windows.Forms.Button();
+            this.btnSeance = new System.Windows.Forms.Button();
+            this.btnMoniteurs = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -54,11 +55,12 @@ namespace AutoEcole
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnVehicule);
             this.panelMenu.Controls.Add(this.btnParametre);
             this.panelMenu.Controls.Add(this.btnPayement);
             this.panelMenu.Controls.Add(this.btnExamen);
             this.panelMenu.Controls.Add(this.btnSeance);
-            this.panelMenu.Controls.Add(this.btnVehicule);
+            this.panelMenu.Controls.Add(this.btnMoniteurs);
             this.panelMenu.Controls.Add(this.btnUsers);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -66,120 +68,6 @@ namespace AutoEcole
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(221, 530);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnParametre
-            // 
-            this.btnParametre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnParametre.FlatAppearance.BorderSize = 0;
-            this.btnParametre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParametre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnParametre.Image = ((System.Drawing.Image)(resources.GetObject("btnParametre.Image")));
-            this.btnParametre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParametre.Location = new System.Drawing.Point(0, 380);
-            this.btnParametre.Name = "btnParametre";
-            this.btnParametre.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnParametre.Size = new System.Drawing.Size(221, 60);
-            this.btnParametre.TabIndex = 6;
-            this.btnParametre.Text = " Paramètres";
-            this.btnParametre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnParametre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnParametre.UseVisualStyleBackColor = true;
-            this.btnParametre.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnPayement
-            // 
-            this.btnPayement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPayement.FlatAppearance.BorderSize = 0;
-            this.btnPayement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayement.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPayement.Image = ((System.Drawing.Image)(resources.GetObject("btnPayement.Image")));
-            this.btnPayement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayement.Location = new System.Drawing.Point(0, 320);
-            this.btnPayement.Name = "btnPayement";
-            this.btnPayement.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPayement.Size = new System.Drawing.Size(221, 60);
-            this.btnPayement.TabIndex = 5;
-            this.btnPayement.Text = " Payements";
-            this.btnPayement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPayement.UseVisualStyleBackColor = true;
-            this.btnPayement.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnExamen
-            // 
-            this.btnExamen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExamen.FlatAppearance.BorderSize = 0;
-            this.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExamen.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnExamen.Image")));
-            this.btnExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamen.Location = new System.Drawing.Point(0, 260);
-            this.btnExamen.Name = "btnExamen";
-            this.btnExamen.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnExamen.Size = new System.Drawing.Size(221, 60);
-            this.btnExamen.TabIndex = 4;
-            this.btnExamen.Text = " Examens";
-            this.btnExamen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExamen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExamen.UseVisualStyleBackColor = true;
-            this.btnExamen.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnSeance
-            // 
-            this.btnSeance.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSeance.FlatAppearance.BorderSize = 0;
-            this.btnSeance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeance.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSeance.Image = ((System.Drawing.Image)(resources.GetObject("btnSeance.Image")));
-            this.btnSeance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeance.Location = new System.Drawing.Point(0, 200);
-            this.btnSeance.Name = "btnSeance";
-            this.btnSeance.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnSeance.Size = new System.Drawing.Size(221, 60);
-            this.btnSeance.TabIndex = 3;
-            this.btnSeance.Text = " Séances";
-            this.btnSeance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSeance.UseVisualStyleBackColor = true;
-            this.btnSeance.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnVehicule
-            // 
-            this.btnVehicule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVehicule.FlatAppearance.BorderSize = 0;
-            this.btnVehicule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVehicule.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVehicule.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicule.Image")));
-            this.btnVehicule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVehicule.Location = new System.Drawing.Point(0, 140);
-            this.btnVehicule.Name = "btnVehicule";
-            this.btnVehicule.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnVehicule.Size = new System.Drawing.Size(221, 60);
-            this.btnVehicule.TabIndex = 2;
-            this.btnVehicule.Text = " Véhicules";
-            this.btnVehicule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVehicule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVehicule.UseVisualStyleBackColor = true;
-            this.btnVehicule.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnUsers
-            // 
-            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.Image")));
-            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(0, 80);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnUsers.Size = new System.Drawing.Size(221, 60);
-            this.btnUsers.TabIndex = 1;
-            this.btnUsers.Text = " Candidats";
-            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUsers.UseVisualStyleBackColor = true;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // panelLogo
             // 
@@ -264,19 +152,6 @@ namespace AutoEcole
             this.btnCloseT.UseVisualStyleBackColor = true;
             this.btnCloseT.Click += new System.EventHandler(this.btnCloseT_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(0, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 80);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -296,6 +171,152 @@ namespace AutoEcole
             this.panelDesktopPane.Name = "panelDesktopPane";
             this.panelDesktopPane.Size = new System.Drawing.Size(876, 450);
             this.panelDesktopPane.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 80);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnVehicule
+            // 
+            this.btnVehicule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVehicule.FlatAppearance.BorderSize = 0;
+            this.btnVehicule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicule.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVehicule.Image = ((System.Drawing.Image)(resources.GetObject("btnVehicule.Image")));
+            this.btnVehicule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVehicule.Location = new System.Drawing.Point(0, 440);
+            this.btnVehicule.Name = "btnVehicule";
+            this.btnVehicule.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnVehicule.Size = new System.Drawing.Size(221, 60);
+            this.btnVehicule.TabIndex = 7;
+            this.btnVehicule.Text = "Véhicule";
+            this.btnVehicule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVehicule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVehicule.UseVisualStyleBackColor = true;
+            this.btnVehicule.Click += new System.EventHandler(this.btnMoniteur_Click);
+            // 
+            // btnParametre
+            // 
+            this.btnParametre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnParametre.FlatAppearance.BorderSize = 0;
+            this.btnParametre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnParametre.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnParametre.Image = ((System.Drawing.Image)(resources.GetObject("btnParametre.Image")));
+            this.btnParametre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnParametre.Location = new System.Drawing.Point(0, 380);
+            this.btnParametre.Name = "btnParametre";
+            this.btnParametre.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnParametre.Size = new System.Drawing.Size(221, 60);
+            this.btnParametre.TabIndex = 6;
+            this.btnParametre.Text = " Paramètres";
+            this.btnParametre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnParametre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnParametre.UseVisualStyleBackColor = true;
+            this.btnParametre.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnPayement
+            // 
+            this.btnPayement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPayement.FlatAppearance.BorderSize = 0;
+            this.btnPayement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPayement.Image = ((System.Drawing.Image)(resources.GetObject("btnPayement.Image")));
+            this.btnPayement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayement.Location = new System.Drawing.Point(0, 320);
+            this.btnPayement.Name = "btnPayement";
+            this.btnPayement.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPayement.Size = new System.Drawing.Size(221, 60);
+            this.btnPayement.TabIndex = 5;
+            this.btnPayement.Text = " Payements";
+            this.btnPayement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPayement.UseVisualStyleBackColor = true;
+            this.btnPayement.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnExamen
+            // 
+            this.btnExamen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExamen.FlatAppearance.BorderSize = 0;
+            this.btnExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamen.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnExamen.Image")));
+            this.btnExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamen.Location = new System.Drawing.Point(0, 260);
+            this.btnExamen.Name = "btnExamen";
+            this.btnExamen.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnExamen.Size = new System.Drawing.Size(221, 60);
+            this.btnExamen.TabIndex = 4;
+            this.btnExamen.Text = " Examens";
+            this.btnExamen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExamen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExamen.UseVisualStyleBackColor = true;
+            this.btnExamen.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnSeance
+            // 
+            this.btnSeance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeance.FlatAppearance.BorderSize = 0;
+            this.btnSeance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSeance.Image = ((System.Drawing.Image)(resources.GetObject("btnSeance.Image")));
+            this.btnSeance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeance.Location = new System.Drawing.Point(0, 200);
+            this.btnSeance.Name = "btnSeance";
+            this.btnSeance.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSeance.Size = new System.Drawing.Size(221, 60);
+            this.btnSeance.TabIndex = 3;
+            this.btnSeance.Text = " Séances";
+            this.btnSeance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSeance.UseVisualStyleBackColor = true;
+            this.btnSeance.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnMoniteurs
+            // 
+            this.btnMoniteurs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMoniteurs.FlatAppearance.BorderSize = 0;
+            this.btnMoniteurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoniteurs.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMoniteurs.Image = ((System.Drawing.Image)(resources.GetObject("btnMoniteurs.Image")));
+            this.btnMoniteurs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMoniteurs.Location = new System.Drawing.Point(0, 140);
+            this.btnMoniteurs.Name = "btnMoniteurs";
+            this.btnMoniteurs.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnMoniteurs.Size = new System.Drawing.Size(221, 60);
+            this.btnMoniteurs.TabIndex = 2;
+            this.btnMoniteurs.Text = "Moniteurs";
+            this.btnMoniteurs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMoniteurs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMoniteurs.UseVisualStyleBackColor = true;
+            this.btnMoniteurs.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.Image")));
+            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.Location = new System.Drawing.Point(0, 80);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnUsers.Size = new System.Drawing.Size(221, 60);
+            this.btnUsers.TabIndex = 1;
+            this.btnUsers.Text = " Candidats";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // Form1
             // 
@@ -326,7 +347,7 @@ namespace AutoEcole
         private System.Windows.Forms.Button btnPayement;
         private System.Windows.Forms.Button btnExamen;
         private System.Windows.Forms.Button btnSeance;
-        private System.Windows.Forms.Button btnVehicule;
+        private System.Windows.Forms.Button btnMoniteurs;
         private System.Windows.Forms.Button btnParametre;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
@@ -336,6 +357,7 @@ namespace AutoEcole
         private System.Windows.Forms.Button btnCloseT;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnVehicule;
     }
 }
 

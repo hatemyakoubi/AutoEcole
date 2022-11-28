@@ -29,7 +29,7 @@ namespace AutoEcole
         /// </summary>
         private void InitializeComponent()
         {
-            this.loginCin = new System.Windows.Forms.TextBox();
+            this.Username = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.BtnLogin = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -41,17 +41,17 @@ namespace AutoEcole
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // loginCin
+            // Username
             // 
-            this.loginCin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginCin.ForeColor = System.Drawing.Color.DarkGray;
-            this.loginCin.Location = new System.Drawing.Point(427, 216);
-            this.loginCin.Multiline = true;
-            this.loginCin.Name = "loginCin";
-            this.loginCin.Size = new System.Drawing.Size(200, 36);
-            this.loginCin.TabIndex = 2;
-            this.loginCin.Text = "CIN";
-            this.loginCin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginCin_MouseClick);
+            this.Username.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.ForeColor = System.Drawing.Color.DarkGray;
+            this.Username.Location = new System.Drawing.Point(427, 216);
+            this.Username.Multiline = true;
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(200, 36);
+            this.Username.TabIndex = 2;
+            this.Username.Text = "Nom";
+            this.Username.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginCin_MouseClick);
             // 
             // password
             // 
@@ -129,7 +129,7 @@ namespace AutoEcole
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.loginCin);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -148,7 +148,7 @@ namespace AutoEcole
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox loginCin;
+        private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.PictureBox BtnLogin;
         private System.Windows.Forms.CheckBox checkBox1;

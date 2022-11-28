@@ -123,14 +123,18 @@ namespace AutoEcole
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormVehicule(), sender);
+            OpenChildForm(new Forms.FormMoniteur(), sender);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormSeance(), sender);
         }
-
+        private void btnMoniteur_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormVehicule(), sender);
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
@@ -186,5 +190,7 @@ namespace AutoEcole
         {
                 this.WindowState = FormWindowState.Minimized;
         }
+
+       
     }
 }
