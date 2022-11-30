@@ -142,7 +142,7 @@ namespace AutoEcole
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormPayement(), sender);
         }
 
         private void button5_Click(object sender, EventArgs e)

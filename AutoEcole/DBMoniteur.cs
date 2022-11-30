@@ -89,7 +89,7 @@ namespace AutoEcole
             con.Close();
         }*/
 
-        public static void deletemoniteur(string id)
+        public static void deletePersonnel(string id)
         {
             string req = "DELETE FROM moniteur WHERE idMoniteur=@id";
             MySqlConnection con = GetConnection();
@@ -109,7 +109,7 @@ namespace AutoEcole
             con.Close();
         }
 
-        public static void DisplayAndSearchmoniteur(string querry, DataGridView dgv)
+        public static void DisplayAndSearchPersonnel(string querry, DataGridView dgv)
         {
             string sql = querry;
             MySqlConnection con = GetConnection();

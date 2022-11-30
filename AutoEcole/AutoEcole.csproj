@@ -112,17 +112,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBPayement.cs" />
     <Compile Include="Forms\FormMoniteur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormMoniteur.Designer.cs">
       <DependentUpon>FormMoniteur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPayement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPayement.Designer.cs">
+      <DependentUpon>FormPayement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewMoniteur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NewMoniteur.Designer.cs">
       <DependentUpon>NewMoniteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewPayement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewPayement.Designer.cs">
+      <DependentUpon>NewPayement.cs</DependentUpon>
     </Compile>
     <Compile Include="Moniteur.cs" />
     <Compile Include="Candidat.cs" />
@@ -174,6 +187,9 @@
     <EmbeddedResource Include="Forms\FormMoniteur.resx">
       <DependentUpon>FormMoniteur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPayement.resx">
+      <DependentUpon>FormPayement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSeance.resx">
       <DependentUpon>FormSeance.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewCandidat.resx">
       <DependentUpon>NewCandidat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewPayement.resx">
+      <DependentUpon>NewPayement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

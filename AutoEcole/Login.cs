@@ -48,7 +48,9 @@ namespace AutoEcole
             {
                 try
                 {
+                    //cnx bd
                     string sql = "datasource=localhost;port=3306;username=root;password=;database=gestionecole";
+                    // variable de cnx
                     MySqlConnection con = new MySqlConnection(sql);
                     con.Open();
                     string req = "select username, password from candidat where username=@username and password=@password ";            

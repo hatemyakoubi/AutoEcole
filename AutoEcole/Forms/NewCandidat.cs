@@ -25,7 +25,7 @@ namespace AutoEcole.Forms
         }
         public void updateInfo()
         {
-            this.Text = "Modifier un candidat";
+            this.Text = "Modifier candidat";
             btnNew.Text = "Modifier";
             nom.Text = nomC;
             prenom.Text = prenomC;
@@ -55,7 +55,7 @@ namespace AutoEcole.Forms
 
         public void SaveInfo()
         {
-            this.Text = "Nouveau un candidat";
+            this.Text = "Nouveau candidat";
             btnNew.Text = "Ajouter";
         }
         public void ClearField()
@@ -120,14 +120,14 @@ namespace AutoEcole.Forms
             }
             if(btnNew.Text == "Ajouter")
             {
-                
-               /* Candidat cdt = new Candidat(nom.Text.Trim(),prenom.Text.Trim(),cin.Text.Trim(),telephone.Text.Trim(),dateNaiss.Value,adresse.Text.Trim(),Categorie.SelectedItem.ToString(),nom.Text.Trim(),cin.Text.Trim(),typeInscri.SelectedItem.ToString(),situation,"ROLE_CANDIDAT",@dateIncription);
-                 DBCandidat.AddCandidat(cdt);*/
+                string nomCandidat = nom.Text + " " + prenom.Text;
                 string sql = "datasource=localhost;port=3306;username=root;password=;database=gestionecole";
                 MySqlConnection con = new MySqlConnection(sql);
                 con.Open();
                 string req = "INSERT INTO candidat VALUES (NULL,@nom,@prenom,@cin,@telephone,@dateNaiss,@adresse,@cat_permis,@username,@password,@typeinscription,@situation,@role,@dateIncription)";
+                string reqPayment = "INSERT INTO payement VALUES(NULL,@montant,@cinCandidat,@nomCandidat,@datePayement)";
                 MySqlCommand cmd = new MySqlCommand(req, con);
+                MySqlCommand cmdP = new MySqlCommand(reqPayment, con);
                 cmd.Parameters.AddWithValue("@nom", nom.Text);
                 cmd.Parameters.AddWithValue("@prenom", prenom.Text);
                 cmd.Parameters.AddWithValue("@cin", cin.Text);
@@ -142,6 +142,12 @@ namespace AutoEcole.Forms
                 cmd.Parameters.AddWithValue("@role", "Utilisateur");
                 cmd.Parameters.AddWithValue("@dateIncription", dateIncription);
                 cmd.ExecuteNonQuery();
+                //execution red payement
+                cmdP.Parameters.AddWithValue("@montant", float.Parse(solde.Text));
+                cmdP.Parameters.AddWithValue("@cinCandidat", cin.Text);
+                cmdP.Parameters.AddWithValue("@nomCandidat", nomCandidat);
+                cmdP.Parameters.AddWithValue("@datePayement", dateIncription);
+                cmdP.ExecuteNonQuery();
                 con.Close();
                 ClearField();
                 MessageBox.Show("Candidat a été ajouter avc succées . \n", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -149,8 +155,6 @@ namespace AutoEcole.Forms
             if (btnNew.Text == "Modifier")
             {
 
-               /* Candidat cdt = new Candidat(nom.Text.Trim(), prenom.Text.Trim(), cin.Text.Trim(), telephone.Text.Trim(), dateNaiss.Value, adresse.Text.Trim(), Categorie.SelectedItem.ToString(), nom.Text.Trim(), cin.Text.Trim(), typeInscri.SelectedItem.ToString(), situation, "ROLE_CANDIDAT", @dateIncription);
-                DBCandidat.UpdateCandidat(cdt, id);*/
                 string sql = "datasource=localhost;port=3306;username=root;password=;database=gestionecole";
                 MySqlConnection con = new MySqlConnection(sql);
                 con.Open();

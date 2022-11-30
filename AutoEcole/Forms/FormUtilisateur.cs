@@ -31,9 +31,6 @@ namespace AutoEcole.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            //label1.ForeColor = ThemeColor.SecondaryColor;
-            /*label4.ForeColor = ThemeColor.SecondaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;*/
         }
         public void Display()
         {
