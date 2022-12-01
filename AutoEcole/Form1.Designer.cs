@@ -221,9 +221,9 @@ namespace AutoEcole
             this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(63, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "DevProd Solution";
+            this.label1.Text = "AutoEcole Plus";
             // 
             // panelTitleBar
             // 

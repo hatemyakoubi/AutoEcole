@@ -112,6 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBSeance.cs" />
     <Compile Include="DBPayement.cs" />
     <Compile Include="Forms\FormMoniteur.cs">
       <SubType>Form</SubType>
@@ -136,6 +137,12 @@
     </Compile>
     <Compile Include="Forms\NewPayement.Designer.cs">
       <DependentUpon>NewPayement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewSeance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewSeance.Designer.cs">
+      <DependentUpon>NewSeance.cs</DependentUpon>
     </Compile>
     <Compile Include="Moniteur.cs" />
     <Compile Include="Candidat.cs" />
@@ -207,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewPayement.resx">
       <DependentUpon>NewPayement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewSeance.resx">
+      <DependentUpon>NewSeance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

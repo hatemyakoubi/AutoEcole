@@ -38,8 +38,6 @@ namespace AutoEcole.Forms
             DBPayement.DisplayAndSearchPayement("SELECT idPayement,montant,cinCandidat,nomCandidat,datePayement FROM payement", PayementDataGridView);
         }
 
-       
-
         private void PayementDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
