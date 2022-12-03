@@ -89,11 +89,12 @@ namespace AutoEcole.Forms
             }
             if (btnNew.Text == "Modifier")
             {
-
+                
                 string sql = "datasource=localhost;port=3306;username=root;password=;database=gestionecole";
                 MySqlConnection con = new MySqlConnection(sql);
                 con.Open();
                 string req = "UPDATE seance SET type_seance= @type,nomCandidat= @nom,dateSeance=@date,moniteur=@moniteur WHERE idSeance=@id";
+                // recuperation de donneés
                 MySqlCommand cmd = new MySqlCommand(req, con);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@type", type.SelectedItem);
