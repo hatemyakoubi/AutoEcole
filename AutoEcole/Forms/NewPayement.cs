@@ -23,7 +23,7 @@ namespace AutoEcole.Forms
         }
         public void updateInfo()
         {
-            this.Text = "Modifier Payement";
+            this.Text = "Modifier payement";
             btnNew.Text = "Modifier";
             nom.Text = nomC;
             montant.Text = montantC;
