@@ -36,7 +36,7 @@ namespace AutoEcole
             this.btnPayement = new System.Windows.Forms.Button();
             this.btnExamen = new System.Windows.Forms.Button();
             this.btnSeance = new System.Windows.Forms.Button();
-            this.btnMoniteurs = new System.Windows.Forms.Button();
+            this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@ namespace AutoEcole
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -60,7 +61,7 @@ namespace AutoEcole
             this.panelMenu.Controls.Add(this.btnPayement);
             this.panelMenu.Controls.Add(this.btnExamen);
             this.panelMenu.Controls.Add(this.btnSeance);
-            this.panelMenu.Controls.Add(this.btnMoniteurs);
+            this.panelMenu.Controls.Add(this.btnPersonnel);
             this.panelMenu.Controls.Add(this.btnUsers);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -164,24 +165,24 @@ namespace AutoEcole
             this.btnSeance.UseVisualStyleBackColor = true;
             this.btnSeance.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnMoniteurs
+            // btnPersonnel
             // 
-            this.btnMoniteurs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMoniteurs.FlatAppearance.BorderSize = 0;
-            this.btnMoniteurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoniteurs.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnMoniteurs.Image = ((System.Drawing.Image)(resources.GetObject("btnMoniteurs.Image")));
-            this.btnMoniteurs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMoniteurs.Location = new System.Drawing.Point(0, 140);
-            this.btnMoniteurs.Name = "btnMoniteurs";
-            this.btnMoniteurs.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnMoniteurs.Size = new System.Drawing.Size(221, 60);
-            this.btnMoniteurs.TabIndex = 2;
-            this.btnMoniteurs.Text = "Personnels";
-            this.btnMoniteurs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMoniteurs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMoniteurs.UseVisualStyleBackColor = true;
-            this.btnMoniteurs.Click += new System.EventHandler(this.button1_Click);
+            this.btnPersonnel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonnel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPersonnel.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonnel.Image")));
+            this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonnel.Location = new System.Drawing.Point(0, 140);
+            this.btnPersonnel.Name = "btnPersonnel";
+            this.btnPersonnel.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPersonnel.Size = new System.Drawing.Size(221, 60);
+            this.btnPersonnel.TabIndex = 2;
+            this.btnPersonnel.Text = "Personnels";
+            this.btnPersonnel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonnel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPersonnel.UseVisualStyleBackColor = true;
+            this.btnPersonnel.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnUsers
             // 
@@ -219,7 +220,7 @@ namespace AutoEcole
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(63, 33);
+            this.label1.Location = new System.Drawing.Point(34, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 2;
@@ -228,6 +229,7 @@ namespace AutoEcole
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.label2);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnCloseT);
@@ -236,7 +238,7 @@ namespace AutoEcole
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(221, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(876, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(895, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -247,7 +249,7 @@ namespace AutoEcole
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(771, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(790, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(30, 30);
             this.btnMaximize.TabIndex = 4;
@@ -262,7 +264,7 @@ namespace AutoEcole
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(807, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(826, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 3;
@@ -277,7 +279,7 @@ namespace AutoEcole
             this.btnCloseT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseT.ForeColor = System.Drawing.Color.White;
-            this.btnCloseT.Location = new System.Drawing.Point(843, 0);
+            this.btnCloseT.Location = new System.Drawing.Point(862, 0);
             this.btnCloseT.Name = "btnCloseT";
             this.btnCloseT.Size = new System.Drawing.Size(30, 30);
             this.btnCloseT.TabIndex = 2;
@@ -304,7 +306,7 @@ namespace AutoEcole
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(336, 33);
+            this.lblTitle.Location = new System.Drawing.Point(345, 33);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(99, 25);
             this.lblTitle.TabIndex = 0;
@@ -315,14 +317,25 @@ namespace AutoEcole
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(221, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(876, 450);
+            this.panelDesktopPane.Size = new System.Drawing.Size(895, 450);
             this.panelDesktopPane.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Location = new System.Drawing.Point(778, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Se déconnecter ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 530);
+            this.ClientSize = new System.Drawing.Size(1116, 530);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -347,7 +360,7 @@ namespace AutoEcole
         private System.Windows.Forms.Button btnPayement;
         private System.Windows.Forms.Button btnExamen;
         private System.Windows.Forms.Button btnSeance;
-        private System.Windows.Forms.Button btnMoniteurs;
+        private System.Windows.Forms.Button btnPersonnel;
         private System.Windows.Forms.Button btnParametre;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
@@ -358,6 +371,7 @@ namespace AutoEcole
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnVehicule;
+        private System.Windows.Forms.Label label2;
     }
 }
 

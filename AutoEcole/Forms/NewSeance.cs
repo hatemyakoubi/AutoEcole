@@ -49,19 +49,33 @@ namespace AutoEcole.Forms
         {
             this.Text = "Modifier Payement";
             btnNew.Text = "Modifier";
-            nom.Text = nomC;
-            dateseance.Text = dateS;
-            moniteur.Text = moniteurS;
-            type.Text = typeS;
+            btnAnnuler.Text = "Supprimer";
+            nom.SelectedItem = connexion.nom;
+            dateseance.Text = connexion.date;
+            moniteur.SelectedItem = connexion.moniteur;
+            type.SelectedItem = connexion.typeseance;
         }
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (btnAnnuler.Text == "Annuler")
+            {
+                this.Close();
+            }
+            if (btnAnnuler.Text == "Supprimer")
+            {
+                if (MessageBox.Show("étez-vous sur de supprimer ce payement?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DBSeance.deleteSeance(connexion.id);
+                    _parent.Display();
+                    ClearField();
+                }
+            }
         }
         public void SaveInfo()
         {
             this.Text = "Ajouter Séance";
             btnNew.Text = "Ajouter";
+            btnAnnuler.Text = "Annuler";
         }
         public void ClearField()
         {
@@ -96,7 +110,7 @@ namespace AutoEcole.Forms
                 string req = "UPDATE seance SET type_seance= @type,nomCandidat= @nom,dateSeance=@date,moniteur=@moniteur WHERE idSeance=@id";
                 // recuperation de donneés
                 MySqlCommand cmd = new MySqlCommand(req, con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", connexion.id);
                 cmd.Parameters.AddWithValue("@type", type.SelectedItem);
                 cmd.Parameters.AddWithValue("@nom", nom.SelectedItem);
                 cmd.Parameters.AddWithValue("@date", dateseance.Value);

@@ -25,27 +25,29 @@ namespace AutoEcole.Forms
         }
         public void updateInfo()
         {
-            this.Text = "Modifier un moniteur";
+            this.Text = "Modifier personnel";
             btnNew.Text = "Modifier";
-            nom.Text = nomC;
-            prenom.Text = prenomC;
-            cin.Text = cinC;
-            telephone.Text = telephoneC;
-            adresse.Text = adresseC;
-            conge.Text = congeM;
-            rib.Text = ribM;
-            cnss.Text = cnssM;
-            dateNaiss.Text = dateNaissC;
-            dateRec.Text = dateRecM;
-            poste.Text = posteM;
-            salaire.Text = salaireM;
+            btnAnnuler.Text = "Supprimer";
+            nom.Text = connexion.nom;
+            prenom.Text = connexion.prenom;
+            cin.Text = connexion.cin;
+            telephone.Text = connexion.tel;
+            adresse.Text = connexion.adresse;
+            conge.Text = connexion.conge;
+            rib.Text = connexion.rib;
+            cnss.Text = connexion.cnss;
+            dateNaiss.Text = connexion.date;
+            dateRec.Text = connexion.dateRec;
+            poste.Text = connexion.role;
+            salaire.Text = connexion.salaire;
 
         }
 
         public void SaveInfo()
         {
-            this.Text = "Nouveau Moniteur";
+            this.Text = "Ajouter personnel";
             btnNew.Text = "Ajouter";
+            btnAnnuler.Text = "Annuler";
         }
         public void ClearField()
         {
@@ -54,7 +56,19 @@ namespace AutoEcole.Forms
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (btnAnnuler.Text == "Annuler")
+            {
+                this.Close();
+            }
+            if (btnAnnuler.Text == "Supprimer")
+            {
+                if (MessageBox.Show("étez-vous sur de supprimer ce payement?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DBMoniteur.deletePersonnel(connexion.id);
+                    _parent.Display();
+                    ClearField();
+                }
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -112,7 +126,9 @@ namespace AutoEcole.Forms
                 MySqlConnection con = new MySqlConnection(sql);
                 con.Open();
                 string req = "INSERT INTO moniteur VALUES (NULL,@nom,@prenom,@cin,@telephone,@dateNaiss,@adresse,@username,@password,@dateRec,@nbrconge,@salaire,@rib,@cnss,@poste,@dateIncription)";
+                string reqUser = "INSERT INTO utilisateur VALUES(NULL,@username,@password,@role)";
                 MySqlCommand cmd = new MySqlCommand(req, con);
+                MySqlCommand cmdU = new MySqlCommand(reqUser, con);
                 cmd.Parameters.AddWithValue("@nom", nom.Text);
                 cmd.Parameters.AddWithValue("@prenom", prenom.Text);
                 cmd.Parameters.AddWithValue("@cin", cin.Text);
@@ -129,6 +145,11 @@ namespace AutoEcole.Forms
                 cmd.Parameters.AddWithValue("@poste", poste.SelectedItem);
                 cmd.Parameters.AddWithValue("@dateIncription", dateIncription);
                 cmd.ExecuteNonQuery();
+                //execution req user
+                cmdU.Parameters.AddWithValue("@username", nom.Text);
+                cmdU.Parameters.AddWithValue("@password", cin.Text);
+                cmdU.Parameters.AddWithValue("@role", poste.SelectedItem);
+                cmdU.ExecuteNonQuery();
                 con.Close();
                 ClearField();
                 MessageBox.Show("Personnel a été ajouter avc succées . \n", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,7 +162,7 @@ namespace AutoEcole.Forms
                 con.Open();
                 string req = "UPDATE moniteur SET nom=@nom,prenom=@prenom,cin=@cin,telephone=@telephone,dateNaiss=@dateNaiss,adresse=@adresse,username=@username,password=@password,dateRec=@dateRec,nbrconge=@nbrconge,salaire=@salaire,rib=@rib,NumCnss=@cnss,role=@poste WHERE idMoniteur=@id";
                 MySqlCommand cmd = new MySqlCommand(req, con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", connexion.id);
                 cmd.Parameters.AddWithValue("@nom", nom.Text);
                 cmd.Parameters.AddWithValue("@prenom", prenom.Text);
                 cmd.Parameters.AddWithValue("@cin", cin.Text);

@@ -100,20 +100,37 @@ namespace AutoEcole
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            //cnx bd
-           /* MySqlConnection cnx = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
-            try
+           if(connexion.type == "Administrateur")
             {
-                cnx.Open();
-               // MessageBox.Show("connexion reussite");
-
-                cnx.Close();
+                btnUsers.Visible = true;
+                btnPersonnel.Visible = true;
+                btnSeance.Visible = true;
+                btnParametre.Visible = true;
+                btnPayement.Visible = true;
+                btnVehicule.Visible = true;
+                btnExamen.Visible = true;
             }
-            catch (Exception ex)
+           else if (connexion.type == "Moniteur")
             {
-                cnx.Close();
-                MessageBox.Show("erreur de connexion \n" + ex.Message);
-            }*/
+                btnUsers.Visible = false;
+                btnPersonnel.Visible = false;
+                btnSeance.Visible = true;
+                btnParametre.Visible = false;
+                btnPayement.Visible = false;
+                btnVehicule.Visible = false;
+                btnExamen.Visible = true;
+
+            }
+            else if (connexion.type == "Utilisateur")
+            {
+                btnUsers.Visible = false;
+                btnPersonnel.Visible = false;
+                btnSeance.Visible = true;
+                btnParametre.Visible = false;
+                btnPayement.Visible = false;
+                btnVehicule.Visible = false;
+                btnExamen.Visible = false;
+            }
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
@@ -137,7 +154,7 @@ namespace AutoEcole
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormVehicule(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -191,6 +208,11 @@ namespace AutoEcole
                 this.WindowState = FormWindowState.Minimized;
         }
 
-       
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            this.Hide();
+        }
     }
 }

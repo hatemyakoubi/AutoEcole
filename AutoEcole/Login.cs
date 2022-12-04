@@ -14,6 +14,7 @@ namespace AutoEcole
 {
     public partial class Login : Form
     {
+        connexion c = new connexion();
         public Login()
         {
             InitializeComponent();
@@ -53,15 +54,32 @@ namespace AutoEcole
                     // variable de cnx
                     MySqlConnection con = new MySqlConnection(sql);
                     con.Open();
-                    string req = "select username, password from candidat where username=@username and password=@password ";            
+                    string req = "select * from utilisateur where username=@username and password=@password ";            
                     MySqlCommand command = new MySqlCommand(req, con);
                     MySqlDataAdapter adp = new MySqlDataAdapter(command);
                     command.Parameters.AddWithValue("@username", Username.Text);
                     command.Parameters.AddWithValue("@password", password.Text);
                     DataTable tbl = new DataTable();
                     adp.Fill(tbl);
+                    Console.WriteLine(adp.Fill(tbl));
+                    MySqlDataReader r = command.ExecuteReader();
                     if (tbl.Rows.Count > 0)
                     {
+                        // Console.WriteLine(tbl.Rows[1][].ToString());
+                        r.Read();
+                        if (r[3].ToString() == "Administrateur")
+                        {
+                            connexion.type = "Administrateur";
+                        }
+                        if (r[3].ToString() == "Moniteur")
+                        {
+                            connexion.type = "Moniteur";
+                        }
+                        if (r[3].ToString() == "Utilisateur")
+                        {
+                            connexion.type = "Utilisateur";
+                        }
+                        Console.WriteLine(connexion.type);
                         f.Show();
                         this.Hide();
                     }

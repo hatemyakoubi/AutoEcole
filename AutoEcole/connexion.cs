@@ -11,20 +11,28 @@ namespace AutoEcole
 {
     class connexion
     {
-        public static MySqlConnection con = null;
+        public  SqlConnection con ;
 
-        public void ConnexionDB()
-        {
-          /*  con = new MySqlConnection("Server=localhost;Database=gestionEcole;Uid=root;Pwd=;");
-            try
-            {
-                con.Open();
-            }
-            catch (Exception ex)
-            {
-                con.Close();
-                MessageBox.Show("erreur de connexion \n" + ex.Message);
-            }*/
-        }
+        public static string type;
+        public static string id;
+        public static string montant;
+        public static string cin;
+        public static string nom;
+        public static string prenom;
+        public static string date;
+        public static string adresse;
+        public static string tel;
+        public static string typeseance;
+        public static string moniteur;
+        public static string dateRec;
+        public static string conge;
+        public static string salaire;
+        public static string rib;
+        public static string cnss;
+        public static string role;
+
+
+
+
     }
 }

@@ -13,6 +13,7 @@ namespace AutoEcole.Forms
     public partial class FormUtilisateur : Form
     {
         NewCandidat form;
+        int indexRow;
         public FormUtilisateur()
         {
             InitializeComponent();
@@ -58,35 +59,17 @@ namespace AutoEcole.Forms
         //evenement sur le click d'une ligne sur Gridview pour récuperer les données de ligne selectionée
         private void CandidatDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                //edit
-                form.ClearField();
-                form.id = CandidatDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString();
-                form.cinC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[3].Value.ToString();
-                form.nomC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[4].Value.ToString();
-                form.prenomC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[5].Value.ToString();
-                form.dateNaissC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[6].Value.ToString();
-                form.adresseC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[7].Value.ToString();
-                form.telephoneC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[8].Value.ToString();
-                form.CategorieC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[9].Value.ToString();
-                form.typeinscriptionC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[10].Value.ToString();
-                form.situationC = CandidatDataGridView.Rows[e.ColumnIndex].Cells[11].Value.ToString();              
+                indexRow = e.RowIndex;
+                DataGridViewRow row = CandidatDataGridView.Rows[indexRow];
+                connexion.id = row.Cells[0].Value.ToString();
+                connexion.cin = row.Cells[1].Value.ToString();
+                connexion.nom = row.Cells[2].Value.ToString();
+                connexion.prenom = row.Cells[3].Value.ToString();
+                connexion.date = row.Cells[4].Value.ToString();
+                connexion.adresse = row.Cells[5].Value.ToString();
+                connexion.tel = row.Cells[6].Value.ToString();
                 form.updateInfo();
                 form.ShowDialog();
-                Console.WriteLine(form.id);
-                return;
-            }
-            if (e.ColumnIndex == 1)
-            {
-                //delete
-               if( MessageBox.Show("étez-vous sur de supprimer ce candidat?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    DBCandidat.deleteCandidat(CandidatDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString());                 
-                    Display();
-                }
-                return;
-            }
         }
     }
 }

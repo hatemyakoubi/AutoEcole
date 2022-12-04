@@ -13,6 +13,7 @@ namespace AutoEcole.Forms
     public partial class FormMoniteur : Form
     {
         NewMoniteur form;
+        int indexRow;
         public FormMoniteur()
         {
             InitializeComponent();
@@ -50,38 +51,23 @@ namespace AutoEcole.Forms
         //evenement sur le click d'une ligne sur Gridview pour récuperer les données de ligne selectionée
         private void MoniteurDataGridView_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                //edit
-                form.ClearField();
-                form.id = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString();
-                form.cinC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[3].Value.ToString();
-                form.nomC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[4].Value.ToString();
-                form.prenomC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[5].Value.ToString();
-                form.dateNaissC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[6].Value.ToString();
-                form.adresseC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[7].Value.ToString();
-                form.telephoneC = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[8].Value.ToString();
-                form.dateRecM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[9].Value.ToString();
-                form.congeM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[10].Value.ToString();
-                form.salaireM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[11].Value.ToString();
-                form.ribM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[12].Value.ToString();
-                form.cnssM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[13].Value.ToString();
-                form.posteM = MoniteurDataGridView.Rows[e.ColumnIndex].Cells[14].Value.ToString();
-                form.updateInfo();
-                form.ShowDialog();
-                Console.WriteLine(form.id);
-                return;
-            }
-            if (e.ColumnIndex == 1)
-            {
-                //delete
-                if (MessageBox.Show("étez-vous sur de supprimer ce personnel?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    DBMoniteur.deletePersonnel(MoniteurDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString());
-                    Display();
-                }
-                return;
-            }
+            indexRow = e.RowIndex;
+            DataGridViewRow row = MoniteurDataGridView.Rows[indexRow];
+            connexion.id = row.Cells[0].Value.ToString();
+            connexion.cin = row.Cells[1].Value.ToString();
+            connexion.nom = row.Cells[2].Value.ToString();
+            connexion.prenom = row.Cells[3].Value.ToString();
+            connexion.date = row.Cells[4].Value.ToString();
+            connexion.adresse = row.Cells[5].Value.ToString();
+            connexion.tel = row.Cells[6].Value.ToString();
+            connexion.dateRec = row.Cells[7].Value.ToString();
+            connexion.conge = row.Cells[8].Value.ToString();
+            connexion.salaire = row.Cells[9].Value.ToString();
+            connexion.rib = row.Cells[10].Value.ToString();
+            connexion.cnss = row.Cells[11].Value.ToString();
+            connexion.role = row.Cells[12].Value.ToString();
+            form.updateInfo();
+            form.ShowDialog();
         }
 
         private void btnNew_Click_1(object sender, EventArgs e)

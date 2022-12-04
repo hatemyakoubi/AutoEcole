@@ -29,20 +29,16 @@ namespace AutoEcole.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.PayementDataGridView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cinCandidat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomCandidat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datePayement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PayementDataGridView)).BeginInit();
@@ -114,13 +110,11 @@ namespace AutoEcole.Forms
             this.PayementDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PayementDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PayementDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.montant,
-            this.cinCandidat,
-            this.nomCandidat,
-            this.datePayement,
-            this.Column7,
-            this.Column8});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.PayementDataGridView.GridColor = System.Drawing.Color.White;
             this.PayementDataGridView.Location = new System.Drawing.Point(39, 89);
             this.PayementDataGridView.MultiSelect = false;
@@ -133,72 +127,40 @@ namespace AutoEcole.Forms
             this.PayementDataGridView.TabIndex = 0;
             this.PayementDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PayementDataGridView_CellClick);
             // 
-            // id
+            // Column1
             // 
-            this.id.DataPropertyName = "idPayement";
-            this.id.HeaderText = "#";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.Column1.DataPropertyName = "idPayement";
+            this.Column1.HeaderText = "#";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // montant
+            // Column2
             // 
-            this.montant.DataPropertyName = "montant";
-            this.montant.HeaderText = "Montant";
-            this.montant.Name = "montant";
-            this.montant.ReadOnly = true;
+            this.Column2.DataPropertyName = "montant";
+            this.Column2.HeaderText = "Montant";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // cinCandidat
+            // Column3
             // 
-            this.cinCandidat.DataPropertyName = "cinCandidat";
-            this.cinCandidat.HeaderText = "Cin Candidat";
-            this.cinCandidat.Name = "cinCandidat";
-            this.cinCandidat.ReadOnly = true;
+            this.Column3.DataPropertyName = "cinCandidat";
+            this.Column3.HeaderText = "Cin Candidat";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // nomCandidat
+            // Column4
             // 
-            this.nomCandidat.DataPropertyName = "nomCandidat";
-            this.nomCandidat.HeaderText = "Nom & Prénom";
-            this.nomCandidat.Name = "nomCandidat";
-            this.nomCandidat.ReadOnly = true;
+            this.Column4.DataPropertyName = "nomCandidat";
+            this.Column4.HeaderText = "Nom&Prénom";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
-            // datePayement
+            // Column5
             // 
-            this.datePayement.DataPropertyName = "datePayement";
-            this.datePayement.HeaderText = "Date payement";
-            this.datePayement.Name = "datePayement";
-            this.datePayement.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Text = "Modifier";
-            this.Column7.UseColumnTextForButtonValue = true;
-            // 
-            // Column8
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column8.HeaderText = "";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Text = "Supprimer";
-            this.Column8.UseColumnTextForButtonValue = true;
+            this.Column5.DataPropertyName = "datePayement";
+            this.Column5.HeaderText = "Date payement";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // FormPayement
             // 
@@ -225,12 +187,10 @@ namespace AutoEcole.Forms
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cinCandidat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomCandidat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datePayement;
-        private System.Windows.Forms.DataGridViewButtonColumn Column7;
-        private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

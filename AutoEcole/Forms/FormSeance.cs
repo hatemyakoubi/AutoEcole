@@ -13,6 +13,7 @@ namespace AutoEcole.Forms
     public partial class FormSeance : Form
     {
         NewSeance form;
+        int indexRow;
         public FormSeance()
         {
             InitializeComponent();
@@ -45,29 +46,15 @@ namespace AutoEcole.Forms
 
         private void SeanceDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                //edit
-                form.ClearField();
-                form.id = SeanceDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString();
-                form.typeS = SeanceDataGridView.Rows[e.ColumnIndex].Cells[3].Value.ToString();
-                form.nomC = SeanceDataGridView.Rows[e.ColumnIndex].Cells[4].Value.ToString();
-                form.dateS = SeanceDataGridView.Rows[e.ColumnIndex].Cells[5].Value.ToString();
-                form.moniteurS = SeanceDataGridView.Rows[e.ColumnIndex].Cells[6].Value.ToString();
-                form.updateInfo();
-                form.ShowDialog();
-                return;
-            }
-            if (e.ColumnIndex == 1)
-            {
-                //delete
-                if (MessageBox.Show("étez-vous sur de supprimer cette séance?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    DBPayement.deletePayement(SeanceDataGridView.Rows[e.ColumnIndex].Cells[2].Value.ToString());
-                    Display();
-                }
-                return;
-            }
+            indexRow = e.RowIndex;
+            DataGridViewRow row = SeanceDataGridView.Rows[indexRow];
+            connexion.id = row.Cells[0].Value.ToString();
+            connexion.typeseance = row.Cells[1].Value.ToString();
+            connexion.nom = row.Cells[2].Value.ToString();
+            connexion.date = row.Cells[3].Value.ToString();
+            connexion.moniteur = row.Cells[4].Value.ToString();
+            form.updateInfo();
+            form.ShowDialog();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

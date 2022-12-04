@@ -25,20 +25,34 @@ namespace AutoEcole.Forms
         {
             this.Text = "Modifier payement";
             btnNew.Text = "Modifier";
-            nom.Text = nomC;
-            montant.Text = montantC;
-            cin.Text = cinC;
+            btnAnnuler.Text = "Supprimer";
+            nom.Text = connexion.nom;
+            montant.Text = connexion.montant;
+            cin.Text = connexion.cin;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
+            if(btnAnnuler.Text == "Annuler")
+            {
             this.Close();
+            }
+            if (btnAnnuler.Text == "Supprimer")
+            {
+                if (MessageBox.Show("étez-vous sur de supprimer ce payement?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    DBPayement.deletePayement(connexion.id);
+                    _parent.Display();
+                    ClearField();
+                }
+            }
         }
 
         public void SaveInfo()
         {
             this.Text = "Ajouter Payement";
             btnNew.Text = "Ajouter";
+            btnAnnuler.Text = "Annuler";
         }
         public void ClearField()
         {
@@ -88,7 +102,7 @@ namespace AutoEcole.Forms
                 con.Open();
                 string req = "UPDATE payement SET montant= @montant,cinCandidat= @cinCandidat,nomCandidat=@nomCandidat,datePayement=@datePayement WHERE idPayement=@id";
                 MySqlCommand cmd = new MySqlCommand(req, con);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", connexion.id);
                 cmd.Parameters.AddWithValue("@montant", float.Parse(montant.Text));
                 cmd.Parameters.AddWithValue("@cinCandidat", cin.Text);
                 cmd.Parameters.AddWithValue("@nomCandidat", nom.Text);
